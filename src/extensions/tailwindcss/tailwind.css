@@ -1,0 +1,50 @@
+/**
+ * This is the CSS base class used to generate Tailwind CSS Code
+ */
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Roboto;
+    src: url(~assets/fonts/Roboto-Regular.woff);
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: Roboto;
+    src: url(~assets/fonts/Roboto-Medium.woff);
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: Roboto;
+    src: url(~assets/fonts/Roboto-Bold.woff);
+    font-weight: 700;
+  }
+
+  /* * {
+    
+    box-sizing: border-box;
+  } */
+
+  body {
+    font-family: Roboto, serif;
+    font-weight: 400;
+    color: #787878;
+    font-size: 15px;
+    line-height: 17.5px;
+  }
+}
+
+@layer utilities {
+  .p-content {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+  .-m-content {
+    margin: 0 -16px;
+  }
+}
