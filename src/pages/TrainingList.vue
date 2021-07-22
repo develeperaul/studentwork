@@ -22,10 +22,12 @@
       class="tw-bg-white tw-min-h-full tw-relative tw-rounded-md tw-px-2 tw-mt-6"
       style="box-shadow: rgba(0, 0, 0, .15) 0px 0px 12px 1px; min-height: 70vh"
       >
-      <div class="tw-flex tw-justify-between tw-py-3">
+      <div
+        v-for="(item) in lessonList" :key="item.id"
+        class="tw-flex tw-justify-between tw-py-3">
         <div class="tw-flex">
           <q-img
-            src="https://cdn.quasar.dev/img/parallax2.jpg" 
+            :src="`https://sim.2apps.ru${item.img}`" 
             :ratio="16/9"
             height="52px"
             width="93px"
@@ -34,31 +36,42 @@
             img-class="tw-rounded-md "
           />
           <div class="tw-flex tw-flex-col tw-ml-2">
-            <span class="tw-font-bold">Кто такой агент?</span>
-            <span class="tw-text-sm">12:00</span>
+            <span class="tw-font-bold">{{item.name}}</span>
+            <span class="tw-text-sm">{{item.dlit}}</span>
             
           </div>
         </div>
-        <div class="tw-self-center tw-ml-2" @click="linkVideo">
+        <div class="tw-self-center tw-ml-2" @click="linkVideo(item.id)">
           <Icon name="play" />
         </div>
       </div>
     </div>
-    
+
   </q-page>
 </template>
 
 <script>
+
+import {mapGetters} from 'vuex'
 export default {
   // name: 'PageName',
   methods:{
     linkTraining(){
       this.$router.push({name:'training'})
     },
-    linkVideo(){
+    linkVideo(id){
       
-      this.$router.push({name: "trainingitem", params: {id: '1'}})
+      this.$router.push({name: "trainingitem", params: {id: id}})
+    },
+    async getLessonList(){
+      await this.$store.dispatch("training/lessonList")
     }
+  },
+  computed:{
+    ...mapGetters("training", ['lessonList']),
+  },
+  created(){
+    this.getLessonList()
   }
 }
 

@@ -14,10 +14,14 @@ Vue.use(Vuex)
  * with the Store instance.
  */
 
+import rate from './rate'
+import training from './training'
+
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-      // example
+      rate,
+      training
     },
 
     // enable strict mode (adds overhead!)

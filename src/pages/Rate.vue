@@ -14,7 +14,8 @@
         <q-select
           borderless
           v-model="model"
-          :options="options"
+          behavior="menu"
+          :options="regionList"
           
           style="box-shadow: rgba(0, 0, 0, .15) 0px 0px 12px 1px; border-radius: 6px"
           >
@@ -40,8 +41,8 @@
         <q-select
           borderless
           v-model="model"
-          :options="options"
-          
+          :options="importantList"
+          behavior="menu"
           style="box-shadow: rgba(0, 0, 0, .15) 0px 0px 12px 1px; border-radius: 6px"
           >
            <template v-slot:prepend>
@@ -68,14 +69,14 @@
         />
     </div>
 
-
+    {{regionList}}
   </q-page>
 </template>
 
 <script>
 
 import Background from 'components/Background.vue'
-
+import {mapGetters} from 'vuex'
 
 export default {
   name: 'Rate',
@@ -89,6 +90,7 @@ export default {
       options: [
         'Google', 'Facebook', 'Twitter', 'Apple', 'Oracle'
       ],
+      op: this.regionList
       
     }
   },
@@ -96,7 +98,22 @@ export default {
     linkTable(){
       console.log('link')
       this.$router.push()
+    },
+    async getRegion(){
+      await this.$store.dispatch('rate/regionList')
+    },
+    async getImportant(){
+      await this.$store.dispatch('rate/importantList')
     }
+  },
+  computed: {
+    ...mapGetters('rate', ['regionList', 'importantList'])
+  },
+  created(){
+    this.regionList ? null : this.getRegion();
+    this.importantList ? null : this.getImportant();
+    
+    
   }
 }
 </script>
