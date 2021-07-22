@@ -18,7 +18,8 @@ module.exports = {
                 'green-light': '#89DEB8',
                 red: '#ED8D88',
                 colal: '#FC8C8C',
-                purple: '#9677ED'
+                purple: '#9677ED',
+                'table-darken': '#FBFBFB'
             },
             fontSize: {
                 xs: ['0.6875rem','0.80565rem'],

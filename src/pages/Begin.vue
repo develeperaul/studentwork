@@ -4,25 +4,25 @@
       title="Оставить заявку"
       src="begin"
     />
-  <Button text="Отрпавить"/>
-  <label for="">
-    Ваш телефон
-  </label>
-  <q-input
-    outlined
-    dark
-    color="white"
-    bg-color="white"
-    
-    dense
-    :style="[{boxShadow: 'rgba(0, 0, 0, .15) 0px 0px 12px 1px'},{borderRadius: '6px'}]"
-    
-  > 
-     <template v-slot:prepend>
-    <Icon name="insta" class="tw-inline"/>
-     </template>
-  </q-input>
   
+  <ValidationObserver
+    v-slot="{ passes }"
+    
+  >
+  <form @submit.prevent="passes(onSubmit)"
+    class="tw-flex tw-flex-col tw-items-center tw-mb-28"
+  >
+
+  
+  <PhoneInput v-model="cellphoneMasked" :raw.sync="cellphone"/>
+  <EmailInput  :valueemail.sync="email"/>
+
+  <Button  text="Отправить" type="submit"
+    class="tw-mt-10"
+  />
+  </form>
+  </ValidationObserver>
+
 
   </q-page>
 </template>
@@ -34,6 +34,18 @@ export default {
   name: 'Begin',
   components: {
     Background
+  },
+  data(){
+    return {
+      email: '',
+      
+      cellphone: '',
+    }
+  },
+  methods: {
+    onSubmit(){
+      console.log("submit")
+    }
   }
 }
 </script>

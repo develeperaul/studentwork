@@ -1,9 +1,26 @@
 <template>
     <q-btn
+      v-if="type==='button'"
+      :to="to"
       rounded
       flat
       no-caps
       no-wrap
+      :type="type"
+      class="tw-bg-deep-lemon tw-py-1.5 tw-w-64"
+    >
+      <span class="tw-text-white tw-font-medium tw-text-2xl">
+        {{text}}
+      </span>
+    </q-btn>
+
+    <q-btn
+      v-else
+      rounded
+      flat
+      no-caps
+      no-wrap
+      :type="type"
       class="tw-bg-deep-lemon tw-py-1.5 tw-w-64"
     >
       <span class="tw-text-white tw-font-medium tw-text-2xl">
@@ -19,6 +36,14 @@ export default {
     text: {
       type: String,
       required: true
+    },
+    type: {
+      type: String,
+      default: 'button'
+    },
+    to: {
+      type: Object,
+      required: false
     }
   },
   data () {

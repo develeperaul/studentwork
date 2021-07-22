@@ -14,6 +14,7 @@ const needRules = [
   'size',
   'min',
   'length',
+  'email',
 ];
 
 needRules.forEach((rule) => {
@@ -23,3 +24,10 @@ needRules.forEach((rule) => {
 Vue.component('Icon', require('src/components/icon/Icon.vue').default);
 
 Vue.component('Button', require('src/components/core/Button.vue').default);
+Vue.component('Input', require('src/components/core/Input.vue').default);
+Vue.component('PhoneInput', require('src/components/core/PhoneInput.vue').default);
+Vue.component('EmailInput', require('src/components/core/EmailInput.vue').default);
+
+
+Vue.component('ValidationProvider', ValidationProvider);
+Vue.component('ValidationObserver', ValidationObserver);

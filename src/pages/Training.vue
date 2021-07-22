@@ -29,7 +29,7 @@
           Получать постоянный доход :)
         </span>
       </div>
-      <Button text="Начать обучение" class="tw-mt-16"/>
+      <Button text="Начать обучение" :to="{name: 'traininglist'}" class="tw-mt-16"/>
     </div>
     
   </q-page>
