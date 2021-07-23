@@ -47,9 +47,9 @@
         >
         <div class="tw-flex tw-items-center">
           <Icon name="insta" class="tw-mr-3"/>
-          <span class="tw-text-xl tw-font-bold tw-text-purple">
+          <a href="https://www.instagram.com/mmpartner_official/?hl=ru" class="tw-text-xl tw-font-bold tw-text-purple">
             Instagram
-          </span>
+          </a>
           
         </div>
         <q-btn round size="10px" icon="chevron_right" flat class="tw-bg-deep-lemon-light tw-text-deep-lemon"/>
@@ -60,9 +60,10 @@
         >
         <div class="tw-flex tw-items-center">
           <Icon name="world" class="tw-mr-3"/>
-          <span class="tw-text-xl tw-font-bold tw-text-blue">
+          <a href="https://mmpartner.ru/" class="tw-text-xl tw-font-bold tw-text-blue">
+            
             mmpartner.ru
-          </span>
+          </a>
         </div>
         <q-btn round size="10px" icon="chevron_right" flat class="tw-bg-deep-lemon-light tw-text-deep-lemon"/>
       </div>
