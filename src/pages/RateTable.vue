@@ -18,12 +18,13 @@
         Тарифы
       </span>
     </div>
-    <Table class="tw-relative tw-z-10 tw-mt-6"/>
+    <Table class="tw-relative tw-z-10 tw-mt-6" :list="tableList"/>
   </q-page>
 </template>
 
 <script>
-import Table from "components/Table.vue"
+import Table from "components/Table.vue";
+import {mapGetters} from "vuex";
 export default {
   name: 'RateTable',
   components: {
@@ -32,7 +33,16 @@ export default {
   methods: {
     linkRate(){
       this.$router.push({name:"rate"})
+    },
+    getTable(){
+      this.$store.dispatch("rate/tableList")
     }
+  },
+  computed:{
+    ...mapGetters('rate', ['tableList'])
+  },
+  created(){
+    this.getTable();
   }
 }
 </script>

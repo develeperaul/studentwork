@@ -49,8 +49,35 @@ th {
 }
 .min-w {
   min-width: 70px;
+
+  word-wrap: break-word;
+}
+.region {
+  .q-field__native {
+    span {
+      color: #80aef2;
+      font-size: 16px;
+      line-height: 19px;
+      font-weight: 700;
+    }
+  }
+}
+.q-menu {
+  span {
+    color: red;
+  }
 }
 
+.important {
+  .q-field__native {
+    span {
+      color: #ed8d88;
+      font-size: 16px;
+      line-height: 19px;
+      font-weight: 700;
+    }
+  }
+}
 /*
 паддинг 32px
 

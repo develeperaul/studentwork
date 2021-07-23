@@ -9,3 +9,7 @@ export function regionList(state){
 export function importantList(state){
     return state.important
 }
+
+export function tableList(state){
+    return state.tableList
+}

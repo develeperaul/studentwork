@@ -15,3 +15,8 @@ export async function importantList({commit}){
     const list = await getImportantList();
     commit('getImportantListSuccess', list)
 }
+
+export async function tableList({commit}){
+    const list = await getRateTableList()
+    commit('getTableListSuccess', list)
+}

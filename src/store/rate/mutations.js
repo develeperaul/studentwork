@@ -10,3 +10,7 @@ export function getRegionListSuccess(state, list){
 export function getImportantListSuccess(state, list){
     state.important = list
 }
+
+export function  getTableListSuccess(state, list){
+    state.tableList = list
+}

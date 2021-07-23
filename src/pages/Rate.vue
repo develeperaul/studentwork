@@ -7,7 +7,7 @@
       
     />
     <div class="tw-flex tw-flex-col tw-items-center tw-mt-4 tw-mb-28">
-      <div class="tw-w-full">
+      <div class="tw-w-full region">
         <span>
           Регион
         </span>
@@ -34,7 +34,7 @@
           </template>
         </q-select>
       </div>
-      <div class="tw-w-full tw-mt-6">
+      <div class="tw-w-full tw-mt-6 important">
         <span>
           Что важно?
         </span>
@@ -128,6 +128,7 @@ export default {
       border: 10px solid red;
       background-color: red;
     }
+
   }
 
 </style>
