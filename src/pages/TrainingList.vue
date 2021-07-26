@@ -36,7 +36,7 @@
             img-class="tw-rounded-md "
           />
           <div class="tw-flex tw-flex-col tw-ml-2">
-            <span class="tw-font-bold">{{item.name}}</span>
+            <span class="tw-font-bold">{{item.label}}</span>
             <span class="tw-text-sm">{{item.dlit}}</span>
             
           </div>
@@ -53,6 +53,8 @@
 <script>
 
 import {mapGetters} from 'vuex'
+import {QSpinnerPuff} from 'quasar'
+
 export default {
   // name: 'PageName',
   methods:{
@@ -64,14 +66,23 @@ export default {
       this.$router.push({name: "trainingitem", params: {id: id}})
     },
     async getLessonList(){
+      this.showLoader();
       await this.$store.dispatch("training/lessonList")
+    },
+    showLoader(){
+      this.$q.loading.show(
+          {
+            spinner: QSpinnerPuff,
+            spinnerSize: 240,
+          }
+      )
     }
   },
   computed:{
     ...mapGetters("training", ['lessonList']),
   },
   created(){
-    this.getLessonList()
+    this.getLessonList().then(()=>{this.$q.loading.hide()});
   }
 }
 

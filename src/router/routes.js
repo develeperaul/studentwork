@@ -11,7 +11,7 @@ const routes = [
       
       
       { path: '/rate', name: "rate", component: () => import('pages/Rate.vue') },
-      { path: '/rate/table', name: "table", component: () => import('pages/RateTable.vue') },
+      { path: '/rate/table/:region_id&:important_id', name: "table", component: () => import('pages/RateTable.vue') },
       { path: '/begin',  name: "begin", component: () => import('pages/Begin.vue') },
     ]
   },

@@ -3,13 +3,25 @@ export function someGetter (state) {
 }
 */
 export function regionList(state){
-    return state.region 
+    if(state.region!==null){
+    let str = JSON.stringify(state.region);
+    str = str.replace(/name/g, 'label');
+    return JSON.parse(str)
+    }
+   
 }
 
 export function importantList(state){
-    return state.important
+    if(state.important){
+        let str = JSON.stringify(state.important);
+        str = str.replace(/name/g, 'label');
+        return JSON.parse(str)
+    } 
 }
 
 export function tableList(state){
-    return state.tableList
+    if(state.tableList){
+
+        return state.tableList
+    }
 }

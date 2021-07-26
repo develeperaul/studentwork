@@ -3,7 +3,7 @@
     <div class="-m-content tw-relative tw-z-0">
       <div
         class=" tw-absolute bg-img"
-        style="background-image: url(/bg/bg-main.svg);"
+        style="background-image: url(/bg/bg-table.svg);"
       >
       </div>
     </div>
@@ -34,15 +34,17 @@ export default {
     linkRate(){
       this.$router.push({name:"rate"})
     },
-    getTable(){
-      this.$store.dispatch("rate/tableList")
+    getTable(id){
+      this.$store.dispatch("rate/tableList", id)
     }
   },
   computed:{
     ...mapGetters('rate', ['tableList'])
   },
   created(){
-    this.getTable();
+    // {region_id: "2", important_id: "3"}
+    console.log(this.$route.params)
+    this.getTable(this.$route.params);
   }
 }
 </script>
@@ -52,11 +54,11 @@ export default {
     background-size: cover;
     /* background-position: top; */
     
-    background-position-y: -40px;
+    background-position-y: -7px;
     background-position-x: center;
     width: 100%;
     min-height: 100px;
-    height: 159px;
+    height: 139px;
     /* padding: 0 0 10px 0; */
     
   }

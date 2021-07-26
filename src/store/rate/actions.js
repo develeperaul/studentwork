@@ -16,7 +16,8 @@ export async function importantList({commit}){
     commit('getImportantListSuccess', list)
 }
 
-export async function tableList({commit}){
-    const list = await getRateTableList()
+export async function tableList({commit},{region_id, important_id}){
+    console.log(region_id, important_id)
+    const list = await getRateTableList(region_id, important_id)
     commit('getTableListSuccess', list)
 }

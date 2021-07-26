@@ -8,10 +8,17 @@
           borderless
           behavior="menu"
           v-model="model"
-          :options="lessonList"
+          :options="optionList"
           class="-m-content"
           style="background-color: #F3F3F3"
+          @input="click"
           >
+          
+          <template v-if="lessonItem!==null" v-slot:selected>
+            <span class="tw-text-sm tw-text-gray">
+              {{labelTo}}
+            </span>
+          </template>
            <template v-slot:prepend>
               <Icon name="options" class="tw-ml-4"/>
           </template>
@@ -27,7 +34,7 @@
                   />
           </template>
         </q-select>
-    <div class="tw-mt-6">
+    <div v-if="lessonItem!==null" class="tw-mt-6">
       <span class="tw-text-gray-darken tw-font-bold tw-text-2xl tw-block tw-text-left">
         УРОК #{{lessonItem.number_of_lesson}} - {{lessonItem.name}}
       </span>
@@ -37,20 +44,16 @@
 
     </div>
 
-    <iframe
-    width="560"
-    height="315"
-      src="https://www.youtube.com/embed/yl8hiSHuhiI"
-
->
-</iframe>
-
+    
+  
     
   </q-page>
 </template>
 
 <script>
 import {mapGetters} from 'vuex'
+import {QSpinnerPuff} from 'quasar'
+
 export default {
   name: 'TrainingItem',
   data(){
@@ -59,19 +62,51 @@ export default {
     }
   },
   methods:{
+    click (val) {
+      this.$router.push({name: "trainingitem", params: {id: val.id}})
+      
+    },
+    showLoader(){
+      this.$q.loading.show(
+        {
+          spinner: QSpinnerPuff,
+          spinnerSize: 240,
+        }
+      )  
+    },
     async getLessonItem(){
       await this.$store.dispatch("training/lessonItem", this.$route.params.id)
     },
     async getLessonList(){
-      await await this.$store.dispatch("training/lessonList")
+      await this.$store.dispatch("training/lessonList")
     }
   },
   computed:{
-    ...mapGetters('training', ['lessonList', 'lessonItem'])
+    ...mapGetters('training', ['lessonList', 'lessonItem']),
+    labelTo(){
+      if(this.lessonList && this.lessonItem){
+      const text = this.lessonList.find(item=>item.number_of_lesson == (+this.lessonItem.number_of_lesson+1))
+      const textFrom = this.lessonList.find(item=>item.number_of_lesson == (+this.lessonItem.number_of_lesson-1))
+      return text ? `Далее: Урок #${text.number_of_lesson} ${text.label}` : `Предыдущий: Урок #${textFrom.number_of_lesson} ${textFrom.label}`
+      }
+    },
+    optionList(){
+      if(this.lessonList && this.lessonItem){
+        console.log(this.lessonList)
+        return this.lessonList.filter(item=>item.id!==this.lessonItem.id) }
+    }
   },
   created(){
-    this.lessonList ? null : this.getLessonList()
+    this.lessonList ? null : this.getLessonList().then(()=>{this.$q.loading.hide()})
     this.getLessonItem()
+  },
+  watch:{
+    '$route.params.id'(){
+        this.lessonList ? null : this.getLessonList().then(()=>{this.$q.loading.hide()})
+        this.getLessonItem()
+    }
   }
+  
+
 }
 </script>

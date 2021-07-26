@@ -14,7 +14,7 @@
   >
 
   
-  <PhoneInput v-model="cellphoneMasked" :raw.sync="cellphone"/>
+  <PhoneInput :raw.sync="cellphone"/>
   <EmailInput  :valueemail.sync="email"/>
 
   <Button  text="Отправить" type="submit"

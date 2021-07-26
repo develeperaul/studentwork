@@ -12,6 +12,6 @@ export function getImportantList(){
 //     return apiStudent(`tariffs.php?region=${id_region}&important=${id_important}`).json()
 // }
 
-export function getRateTableList(){
-    return apiStudent('tariffs.php?region=1&important=3').json()
+export function getRateTableList(region_id, important_id){
+    return apiStudent(`tariffs.php?region=${region_id}&important=${important_id}`).json()
 }

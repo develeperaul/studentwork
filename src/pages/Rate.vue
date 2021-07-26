@@ -13,12 +13,13 @@
         </span>
         <q-select
           borderless
-          v-model="model"
+          v-model="modelRegion"
           behavior="menu"
           :options="regionList"
-          
+          class="tw-mt-2"
           style="box-shadow: rgba(0, 0, 0, .15) 0px 0px 12px 1px; border-radius: 6px"
           >
+          
           <template v-slot:prepend>
               <Icon name="city" class="tw-ml-3.5"/>
           </template>
@@ -35,14 +36,16 @@
         </q-select>
       </div>
       <div class="tw-w-full tw-mt-6 important">
-        <span>
+        <span >
           Что важно?
         </span>
         <q-select
           borderless
-          v-model="model"
+          v-model="modelImportant"
           :options="importantList"
           behavior="menu"
+          class="tw-mt-2"
+          
           style="box-shadow: rgba(0, 0, 0, .15) 0px 0px 12px 1px; border-radius: 6px"
           >
            <template v-slot:prepend>
@@ -64,7 +67,7 @@
       </div>
       <Button
         text="Посмотреть"
-        :to="{name: 'table'}"
+        :to="{name: 'table', params: {region_id: modelRegion.id, important_id: modelImportant.id}}"
         class="tw-mt-16"
         />
     </div>
@@ -77,6 +80,7 @@
 
 import Background from 'components/Background.vue'
 import {mapGetters} from 'vuex'
+import {QSpinnerPuff} from 'quasar'
 
 export default {
   name: 'Rate',
@@ -86,33 +90,47 @@ export default {
   },
   data(){
     return {
-      model: 'Google',
-      options: [
-        'Google', 'Facebook', 'Twitter', 'Apple', 'Oracle'
-      ],
-      op: this.regionList
+      modelImportant: null,
+      modelRegion: null
       
     }
   },
   methods:{
+
     linkTable(){
       console.log('link')
       this.$router.push()
     },
     async getRegion(){
+      this.showLoader();
       await this.$store.dispatch('rate/regionList')
     },
     async getImportant(){
+      this.showLoader();
       await this.$store.dispatch('rate/importantList')
+    },
+    showLoader(){
+      this.$q.loading.show(
+          {
+            spinner: QSpinnerPuff,
+            spinnerSize: 240,
+          }
+      )
     }
   },
   computed: {
-    ...mapGetters('rate', ['regionList', 'importantList'])
+    ...mapGetters('rate', ['regionList', 'importantList']),
+    
+    zeroLabelIportant(){
+      console.log(this.importantList[0])
+      return this.importantList[0] ? this.importantList[0] : null
+     }
   },
   created(){
-    this.regionList ? null : this.getRegion();
     this.importantList ? null : this.getImportant();
-    
+    this.regionList ? null : this.getRegion().then(()=>{this.$q.loading.hide()});
+    this.modelImportant = this.importantList[0]    
+    this.modelRegion = this.regionList[0]
     
   }
 }
