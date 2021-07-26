@@ -2,26 +2,18 @@
 export function someGetter (state) {
 }
 */
-export function regionList(state){
-    if(state.region!==null){
-    let str = JSON.stringify(state.region);
-    str = str.replace(/name/g, 'label');
-    return JSON.parse(str)
-    }
-   
+export function regionList(state) {
+  if (state.region === null) return null;
+  return state.region.map(el => ({ label: el.name, ...el }));
 }
 
-export function importantList(state){
-    if(state.important){
-        let str = JSON.stringify(state.important);
-        str = str.replace(/name/g, 'label');
-        return JSON.parse(str)
-    } 
+export function importantList(state) {
+  if (state.important === null) return null;
+  return state.important.map(el => ({ label: el.name, ...el }));
 }
 
-export function tableList(state){
-    if(state.tableList){
-
-        return state.tableList
-    }
+export function tableList(state) {
+  if (state.tableList) {
+    return state.tableList;
+  }
 }
