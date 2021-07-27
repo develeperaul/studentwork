@@ -15,7 +15,7 @@
           >
           
           <template v-if="lessonItem!==null" v-slot:selected>
-            <span class="tw-text-sm tw-text-gray">
+            <span class="tw-text-sm tw-text-gray tw-mr-4">
               {{labelTo}}
             </span>
           </template>
@@ -29,7 +29,7 @@
                   size="10px"
                   icon="chevron_right"
                   flat
-                  class="tw-absolute tw-top-1/2 tw-right-3.5 tw-transform tw--translate-y-1/2 tw-rotate-90  tw-text-gray-darken" 
+                  class="tw-absolute tw-top-1/2 tw-right-3.5 tw-transform tw--translate-y-1/2 tw-rotate-90  tw-text-gray-darken " 
                   
                   />
           </template>
@@ -75,6 +75,7 @@ export default {
       )  
     },
     async getLessonItem(){
+      this.showLoader()
       await this.$store.dispatch("training/lessonItem", this.$route.params.id)
     },
     async getLessonList(){
@@ -97,13 +98,13 @@ export default {
     }
   },
   created(){
-    this.lessonList ? null : this.getLessonList().then(()=>{this.$q.loading.hide()})
-    this.getLessonItem()
+    this.lessonList ? null : this.getLessonList()
+    this.getLessonItem().then(()=>{this.$q.loading.hide()})
   },
   watch:{
     '$route.params.id'(){
-        this.lessonList ? null : this.getLessonList().then(()=>{this.$q.loading.hide()})
-        this.getLessonItem()
+        this.lessonList ? null : this.getLessonList()
+        this.getLessonItem().then(()=>{this.$q.loading.hide()})
     }
   }
   

@@ -28,12 +28,13 @@
         <div class="tw-flex">
           <q-img
             :src="`https://sim.2apps.ru${item.img}`" 
-            :ratio="16/9"
+            
             height="52px"
             width="93px"
             spinner-color="primary"
-            spinner-size="82px"
+            spinner-size="40px"
             img-class="tw-rounded-md "
+            style="min-width:93px"
           />
           <div class="tw-flex tw-flex-col tw-ml-2">
             <span class="tw-font-bold">{{item.label}}</span>
