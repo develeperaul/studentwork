@@ -25,17 +25,28 @@
 <script>
 import Table from "components/Table.vue";
 import {mapGetters} from "vuex";
+import {QSpinnerPuff} from 'quasar'
+
 export default {
   name: 'RateTable',
   components: {
     Table
   },
   methods: {
+    showLoader(){
+      this.$q.loading.show(
+        {
+          spinner: QSpinnerPuff,
+          spinnerSize: 240,
+        }
+      )  
+    },
     linkRate(){
       this.$router.push({name:"rate"})
     },
-    getTable(id){
-      this.$store.dispatch("rate/tableList", id)
+    async getTable(id){
+      this.showLoader()
+      await this.$store.dispatch("rate/tableList", id)
     }
   },
   computed:{
@@ -44,7 +55,7 @@ export default {
   created(){
     // {region_id: "2", important_id: "3"}
     console.log(this.$route.params)
-    this.getTable(this.$route.params);
+    this.getTable(this.$route.params).then(()=>{this.$q.loading.hide()});
   }
 }
 </script>
