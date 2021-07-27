@@ -44,7 +44,8 @@ export default {
   },
   methods: {
     onSubmit(){
-      console.log("submit")
+      // console.log({cellphone:this.cellphone, mail:this.email})
+      this.$store.dispatch('auth/send', {cellphone:this.cellphone, mail:this.email})
     }
   }
 }

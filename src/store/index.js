@@ -16,12 +16,15 @@ Vue.use(Vuex)
 
 import rate from './rate'
 import training from './training'
+import auth from './auth'
+
 
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
       rate,
-      training
+      training,
+      auth
     },
 
     // enable strict mode (adds overhead!)
