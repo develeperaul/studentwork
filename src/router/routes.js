@@ -15,6 +15,11 @@ const routes = [
       { path: '/begin',  name: "begin", component: () => import('pages/Begin.vue') },
     ]
   },
+  {
+    path: '/carousel',
+    name: 'screen-start',
+    component: () => import('layouts/CarouselLayout.vue')
+  },
 
   // Always leave this as last one,
   // but you can also remove it

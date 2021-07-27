@@ -19,7 +19,9 @@ module.exports = {
                 red: '#ED8D88',
                 colal: '#FC8C8C',
                 purple: '#9677ED',
-                'table-darken': '#FBFBFB'
+                'table-darken': '#FBFBFB',
+
+                "slide-color": '#F3A842'
             },
             fontSize: {
                 xs: ['0.6875rem','0.80565rem'],
