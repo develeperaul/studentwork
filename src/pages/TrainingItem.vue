@@ -15,7 +15,7 @@
           >
           
           <template v-if="lessonItem!==null" v-slot:selected>
-            <span class="tw-text-sm tw-text-gray tw-mr-4">
+            <span class="tw-text-sm tw-text-gray tw-mr-4 tw-block">
               {{labelTo}}
             </span>
           </template>
