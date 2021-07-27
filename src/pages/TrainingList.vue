@@ -19,12 +19,14 @@
       </span>
     </div>
     <div
-      class="tw-bg-white tw-min-h-full tw-relative tw-rounded-md tw-px-2 tw-mt-6"
-      style="box-shadow: rgba(0, 0, 0, .15) 0px 0px 12px 1px; min-height: 70vh"
+      class="tw-bg-white tw-min-h-full tw-relative tw-rounded-md tw-px-2 tw-mt-6 tw-mb-11"
+      style="box-shadow: 0px 0px 48px 16px #F4AD4829; min-height: 70vh"
+      
+
       >
       <div
         v-for="(item) in lessonList" :key="item.id"
-        class="tw-flex tw-justify-between tw-py-3">
+        class="tw-flex tw-justify-between tw-py-3 b-bottom">
         <div class="tw-flex">
           <q-img
             :src="`https://sim.2apps.ru${item.img}`" 
@@ -37,8 +39,8 @@
             style="min-width:93px"
           />
           <div class="tw-flex tw-flex-col tw-ml-2">
-            <span class="tw-font-bold">{{item.label}}</span>
-            <span class="tw-text-sm">{{item.dlit}}</span>
+            <span class="tw-font-bold ">{{item.label}}</span>
+            <span class="tw-text-sm tw-mt-1">{{item.dlit}}</span>
             
           </div>
         </div>
@@ -102,5 +104,9 @@ export default {
     height: 242px;
     /* padding: 0 0 10px 0; */
     
+  }
+
+  .b-bottom:not(:last-child) {
+    border-bottom: 1px solid #FFF1D7;
   }
 </style>
