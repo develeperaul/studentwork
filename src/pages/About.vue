@@ -41,32 +41,32 @@
         <span class="tw-font-bold tw-text-gray-darken tw-mt-9">
           Свяжитесь с нами!
         </span>
-      <div
+      <a href="https://www.instagram.com/mmpartner_official/?hl=ru"
         class="tw-mt-5 tw-flex tw-items-center tw-justify-between tw-w-full tw-rounded-xl tw-py-2 tw-px-3"
         style="box-shadow: rgba(0, 0, 0, .15) 0px 0px 12px 1px;"
         >
         <div class="tw-flex tw-items-center">
           <Icon name="insta" class="tw-mr-3"/>
-          <a href="https://www.instagram.com/mmpartner_official/?hl=ru" class="tw-text-xl tw-font-bold tw-text-purple">
+          <span class="tw-text-xl tw-font-bold tw-text-purple">
             Instagram
-          </a>
+          </span>
           
         </div>
         <q-btn round size="10px" icon="chevron_right" flat class="tw-bg-deep-lemon-light tw-text-deep-lemon"/>
-      </div>
-      <div
+      </a>
+      <a href="https://mmpartner.ru/"
         class="tw-mt-4 tw-flex tw-items-center tw-justify-between tw-w-full tw-rounded-xl tw-py-2 tw-px-3"
         style="box-shadow: rgba(0, 0, 0, .15) 0px 0px 12px 1px;"
         >
         <div class="tw-flex tw-items-center">
           <Icon name="world" class="tw-mr-3"/>
-          <a href="https://mmpartner.ru/" class="tw-text-xl tw-font-bold tw-text-blue">
+          <span class="tw-text-xl tw-font-bold tw-text-blue">
             
             mmpartner.ru
-          </a>
+          </span>
         </div>
         <q-btn round size="10px" icon="chevron_right" flat class="tw-bg-deep-lemon-light tw-text-deep-lemon"/>
-      </div>
+      </a>
     </div>
     
 
