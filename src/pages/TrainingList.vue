@@ -44,10 +44,11 @@
             
           </div>
         </div>
-         
+        
         <div v-ripple.center class="relative-position botder tw-self-center tw-ml-2"
         style="border-radius:50%"
-        @click="linkVideo(item.id)">
+        @click="linkVideo(item.id)"
+        >
           <Icon name="play"/>
         </div>
       </div>
