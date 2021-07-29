@@ -3,7 +3,7 @@
     <div class="-m-content tw-relative tw-z-0">
       <div
         class=" tw-absolute bg-img"
-        style="background-image: url(/bg/bg-traininglist.svg);"
+        style="background-image: url(bg/bg-traininglist.svg);"
       >
       </div>
     </div>

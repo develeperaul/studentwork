@@ -3,7 +3,7 @@
   <div class="-m-content">
     <div
       class=" tw-absolute bg-img"
-      style="background-image: url(/bg/bg-main.svg);"
+      style="background-image: url(bg/bg-main.svg);"
     >
     </div>
   </div>

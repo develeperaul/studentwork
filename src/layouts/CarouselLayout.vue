@@ -22,7 +22,7 @@
       <q-carousel-slide :name="1" >
         <div>
         <q-img
-          src="/carousel/people_1.svg"
+          src="carousel/people_1.svg"
           
           spinner-color="primary"
           spinner-size="82px"
@@ -33,7 +33,7 @@
           class="tw-mt-5"
           
         />
-        <p class="tw-text-center tw-font-bold tw-text-2xl">
+        <p class="tw-text-center tw-mt-7 tw-font-bold tw-text-2xl">
           Ты студент, которому нужен 
           дополнительный доход?
         </p>
@@ -47,7 +47,7 @@
       <q-carousel-slide :name="2" >
         <div>
           <q-img
-            src="/carousel/people_2.svg"
+            src="carousel/people_2.svg"
             
             spinner-color="primary"
             spinner-size="82px"
@@ -58,7 +58,7 @@
             class="tw-mt-5"
             
           />
-          <p class="tw-text-center tw-font-bold tw-text-2xl">
+          <p class="tw-text-center tw-mt-7 tw-font-bold tw-text-2xl">
             Чем нужно заниматься?
           </p>
           <p class="tw-text-center tw-mt-4 tw-text-lg">
@@ -71,7 +71,7 @@
       <q-carousel-slide :name="3" >
         <div>
           <q-img
-            src="/carousel/people_1.svg"
+            src="carousel/people_1.svg"
             
             spinner-color="primary"
             spinner-size="82px"
@@ -82,7 +82,7 @@
             class="tw-mt-5"
             
           />
-          <p class="tw-text-center tw-font-bold tw-text-2xl">
+          <p class="tw-text-center tw-mt-7 tw-font-bold tw-text-2xl">
             «А хватит ли мне времени?»
 
           </p>
@@ -97,7 +97,7 @@
       <q-carousel-slide :name="4" >
         <div>
           <q-img
-            src="/carousel/people_4.svg"
+            src="carousel/people_4.svg"
             
             spinner-color="primary"
             spinner-size="82px"
@@ -108,7 +108,7 @@
             class="tw-mt-5"
             
           />
-          <p class="tw-text-center tw-font-bold tw-text-2xl">
+          <p class="tw-text-center tw-mt-7 tw-font-bold tw-text-2xl">
             «Но я не продажник»
           </p>
           <p class="tw-text-center tw-mt-4 tw-text-lg">
@@ -122,7 +122,7 @@
       <q-carousel-slide :name="5" >
         <div>
           <q-img
-            src="/carousel/people_5.svg"
+            src="carousel/people_5.svg"
             
             spinner-color="primary"
             spinner-size="82px"
@@ -133,7 +133,7 @@
             class="tw-mt-5"
             
           />
-          <p class="tw-text-center tw-font-bold tw-text-2xl">
+          <p class="tw-text-center tw-mt-7 tw-font-bold tw-text-2xl">
             Откуда у нас такие 
             выгодные тарифы?
           </p>
