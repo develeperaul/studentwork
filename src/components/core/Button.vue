@@ -2,6 +2,7 @@
     <q-btn
       v-if="type==='button'"
       :to="to"
+      :ripple="{early: true, center: true}"
       rounded
       flat
       no-caps
@@ -19,6 +20,7 @@
       v-else
       rounded
       flat
+      :ripple="{early: true, center: true}"
       no-caps
       no-wrap
       :type="type"
