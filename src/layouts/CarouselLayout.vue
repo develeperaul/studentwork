@@ -33,7 +33,7 @@
           class="tw-mt-5"
           
         />
-        <p class="tw-text-center tw-mx-12 tw-font-bold tw-text-2xl">
+        <p class="tw-text-center tw-font-bold tw-text-2xl">
           Ты студент, которому нужен 
           дополнительный доход?
         </p>
@@ -58,7 +58,7 @@
             class="tw-mt-5"
             
           />
-          <p class="tw-text-center tw-mx-12 tw-font-bold tw-text-2xl">
+          <p class="tw-text-center tw-font-bold tw-text-2xl">
             Чем нужно заниматься?
           </p>
           <p class="tw-text-center tw-mt-4 tw-text-lg">
@@ -82,7 +82,7 @@
             class="tw-mt-5"
             
           />
-          <p class="tw-text-center tw-mx-12 tw-font-bold tw-text-2xl">
+          <p class="tw-text-center tw-font-bold tw-text-2xl">
             «А хватит ли мне времени?»
 
           </p>
@@ -108,7 +108,7 @@
             class="tw-mt-5"
             
           />
-          <p class="tw-text-center tw-mx-12 tw-font-bold tw-text-2xl">
+          <p class="tw-text-center tw-font-bold tw-text-2xl">
             «Но я не продажник»
           </p>
           <p class="tw-text-center tw-mt-4 tw-text-lg">
@@ -133,7 +133,7 @@
             class="tw-mt-5"
             
           />
-          <p class="tw-text-center tw-mx-12 tw-font-bold tw-text-2xl">
+          <p class="tw-text-center tw-font-bold tw-text-2xl">
             Откуда у нас такие 
             выгодные тарифы?
           </p>
@@ -150,10 +150,10 @@
       
       <template v-slot:navigation-icon="{ active}"  >
           
-            <div v-if="active" class="tw-pb-16 tw-mx-1">
+            <div v-if="active" class="tw-mx-1">
               <Icon  name="ellipse_border"/>
             </div>
-            <div v-else class="tw-pb-16 tw-mx-1">
+            <div v-else class="tw-mx-1">
               <Icon  name="ellipse"/>
             </div>
           
@@ -167,7 +167,7 @@
         <q-carousel-control
           position="bottom"
           :offset="[0, 0]"
-          class="tw-flex tw-justify-between tw-pb-20"
+          class="tw-flex tw-justify-between tw-pb-4"
           
         >
           <span

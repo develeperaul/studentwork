@@ -2,7 +2,7 @@
   <q-page >
         <q-video
         class="-m-content"
-      src="https://www.youtube.com/embed/yl8hiSHuhiI"
+      :src="lessonItem.url_youtube"
     />
             <q-select
           borderless
@@ -99,12 +99,12 @@ export default {
   },
   created(){
     this.lessonList ? null : this.getLessonList()
-    this.getLessonItem().then(()=>{this.$q.loading.hide()})
+    return this.getLessonItem().then(()=>{this.$q.loading.hide()})
   },
   watch:{
     '$route.params.id'(){
         this.lessonList ? null : this.getLessonList()
-        this.getLessonItem().then(()=>{this.$q.loading.hide()})
+        return this.getLessonItem().then(()=>{this.$q.loading.hide()})
     }
   }
   

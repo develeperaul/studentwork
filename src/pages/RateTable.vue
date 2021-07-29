@@ -18,7 +18,11 @@
         Тарифы
       </span>
     </div>
-    <Table class="tw-relative tw-z-10 tw-mt-6" :list="tableList"/>
+    
+    <Table v-if="tableList.length !== 0" class="tw-relative tw-z-10 tw-mt-6" :list="tableList"/>
+    <div v-else class="tw-z-10  tw-relative tw-w-full tw-h-full">
+      <span class="tw-absolute tw-transform tw-translate-x-1/2 tw-right-1/2 tw-font-bold tw-text-2xl ">Данных нет</span>  
+    </div>
   </q-page>
 </template>
 
