@@ -10,21 +10,21 @@
         Чему вы научитесь:
       </span>
       <div class="tw-flex tw-mt-6">
-        <Icon name="check" class="tw-inline tw-mr-1.5 tw-transform tw--translate-y-1"/>
+        <Icon name="check" class="tw-mr-1.5 tw-transform tw--translate-y-1"/>
         <span class="tw-text-left tw-w-56 ">
         Находить клиентов, которым 
         интересны выгодные тарифы
         </span>
       </div>
       <div class="tw-flex tw-mt-6">
-        <Icon name="check" class="tw-inline tw-mr-1.5 tw-transform tw--translate-y-1"/>
+        <Icon name="check" class=" tw-mr-1.5 tw-transform tw--translate-y-1"/>
         <span class="tw-text-left tw-w-56">
         Правильно регистрировать 
         сим-карты для пользователей
         </span>
       </div>
       <div class="tw-flex tw-mt-6">
-        <Icon name="check" class="tw-inline tw-mr-1.5 tw-transform tw--translate-y-1"/>
+        <Icon name="check" class="tw-mr-1.5 tw-transform tw--translate-y-1"/>
         <span class="tw-text-left tw-w-56">
           Получать постоянный доход :)
         </span>
