@@ -15,7 +15,7 @@
           >
           
           <template v-if="lessonItem!==null" v-slot:selected>
-            <span class="tw-text-sm tw-text-gray tw-mr-4 tw-block">
+            <span class="tw-text-sm tw-text-gray tw-mr-4 tw-flex tw-h-full tw-items-center">
               {{labelTo}}
             </span>
           </template>
@@ -29,8 +29,8 @@
                   size="10px"
                   icon="chevron_right"
                   flat
-                  class="tw-absolute tw-top-1/2 tw-right-3.5 tw-transform tw--translate-y-1/2 tw-rotate-90  tw-text-gray-darken " 
-                  
+                  class="tw-absolute tw-top-1/2 tw-transform tw--translate-y-1/2 tw-rotate-90  tw-text-gray-darken " 
+                  style="right: 14px"
                   />
           </template>
         </q-select>

@@ -7,7 +7,8 @@
       no-caps
       no-wrap
       :type="type"
-      class="tw-bg-deep-lemon tw-py-1.5 tw-w-64"
+      class="tw-bg-deep-lemon tw-w-64"
+      style="padding: 6px 0"
     >
       <span class="tw-text-white tw-font-medium tw-text-2xl">
         {{text}}
@@ -21,7 +22,8 @@
       no-caps
       no-wrap
       :type="type"
-      class="tw-bg-deep-lemon tw-py-1.5 tw-w-64"
+      class="tw-bg-deep-lemon tw-w-64"
+      style="padding: 6px 0"
     >
       <span class="tw-text-white tw-font-medium tw-text-2xl">
         {{text}}

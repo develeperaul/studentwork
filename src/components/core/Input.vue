@@ -20,8 +20,9 @@
     <input
       
       :class="{ 'tw-text-red': errors[0], 'tw-pr-11' : errors[0],   }"
-      class="tw-w-full tw-mt-2.5 tw-py-3.5 tw-pl-14 tw-pr-3 tw-bg-transparent   tw-font-bold tw-text-xl"
+      class="tw-w-full tw-pl-14 tw-pr-3 tw-bg-transparent   tw-font-bold tw-text-xl"
       :style="errors[0] ? {'color' : '#ED8D88 '} : {'color': textColor}"
+      style="margin-top:8px; padding-top: 14px; padding-bottom: 14px"
       :id="name" 
       :type="type"
       :maxlength="maxlength"    
@@ -35,10 +36,10 @@
 
     
     <template>
-      <Icon class="tw-absolute tw-top-2/3 tw-left-3.5 tw-transform tw--translate-y-1/2" :name="iconName"/>
+      <Icon class="tw-absolute tw-top-2/3  tw-transform tw--translate-y-1/2" style="left: 14px" :name="iconName"/>
     </template>
     <template v-if="errors[0]">
-      <Icon class="tw-absolute tw-top-2/3 tw-right-3.5 tw-transform tw--translate-y-1/2" name="failed"/>
+      <Icon class="tw-absolute tw-top-2/3 tw-transform tw--translate-y-1/2" style="right: 14px" name="failed"/>
     </template>
     
     <!-- <span

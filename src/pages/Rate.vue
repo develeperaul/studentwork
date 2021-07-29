@@ -16,10 +16,13 @@
           style="
             box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 12px 1px;
             border-radius: 6px;
+            
           "
         >
           <template v-slot:prepend>
-            <Icon name="city" class="tw-ml-3.5" />
+            <Icon
+              name="city" 
+              style="margin-left: 14px"/>
           </template>
           <template v-slot:append>
             <q-btn
@@ -30,13 +33,13 @@
               class="
                 tw-absolute
                 tw-top-1/2
-                tw-right-3.5
                 tw-transform
                 tw--translate-y-1/2
                 tw-rotate-90
                 tw-bg-deep-lemon-light
                 tw-text-deep-lemon
               "
+              style="right: 14px"
             />
           </template>
         </q-select>
@@ -55,7 +58,7 @@
           "
         >
           <template v-slot:prepend>
-            <Icon name="failed" class="tw-ml-3.5" />
+            <Icon name="failed" style="margin-left: 14px" />
           </template>
           <template v-slot:append>
             <q-btn
@@ -73,6 +76,8 @@
                 tw-bg-deep-lemon-light
                 tw-text-deep-lemon
               "
+              style="right: 14px"
+
             />
           </template>
         </q-select>

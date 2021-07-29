@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hhh lpr FFF" container style="height:100vh">
     <q-footer class="tw-bg-white  tw-overflow-hidden tw-pt-1.5 tw-pb-3.5"
-    style="box-shadow: 0px 0px 18px 0px #E5E5E5;
+    style="box-shadow: 0px 0px 18px 0px #E5E5E5; padding-top: 6px; padding-bottom: 14px;
 ">
         <div class="-m-content">
           <q-toolbar class="tw-grid tw-grid-flow-col  ">
