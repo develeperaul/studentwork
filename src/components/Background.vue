@@ -11,9 +11,7 @@
     <span class="tw-text-white tw-font-bold tw-text-2xl tw-pt-6 tw-z-10">{{title}}</span>
     <q-img
       :src="`bg/bg-${src}.svg`"
-      
-      spinner-color="primary"
-      spinner-size="82px"
+      no-default-spinner
       contain
       position="bottom"
       height="193px"

@@ -15,7 +15,7 @@
           >
           
           <template v-if="lessonItem!==null" v-slot:selected>
-            <span class="tw-text-sm tw-text-gray tw-mr-4 tw-flex tw-h-full tw-items-center">
+            <span class="tw-text-sm tw-text-gray tw-mr-10 tw-flex tw-h-full tw-items-center">
               {{labelTo}}
             </span>
           </template>
@@ -67,15 +67,10 @@ export default {
       
     },
     showLoader(){
-      this.$q.loading.show(
-        {
-          spinner: QSpinnerPuff,
-          spinnerSize: 240,
-        }
-      )  
+
     },
     async getLessonItem(){
-      this.showLoader()
+      
       await this.$store.dispatch("training/lessonItem", this.$route.params.id)
     },
     async getLessonList(){
@@ -98,13 +93,20 @@ export default {
     }
   },
   created(){
+          this.$q.loading.show(
+        {
+          spinner: QSpinnerPuff,
+          spinnerSize: 240,
+          delay: 400
+        }
+      )  
     this.lessonList ? null : this.getLessonList()
     return this.getLessonItem().then(()=>{this.$q.loading.hide()})
   },
   watch:{
     '$route.params.id'(){
         this.lessonList ? null : this.getLessonList()
-        return this.getLessonItem().then(()=>{this.$q.loading.hide()})
+        return this.getLessonItem()
     }
   }
   
