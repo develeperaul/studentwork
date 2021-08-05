@@ -2,8 +2,9 @@
   <q-page>
     <q-video
       class="-m-content"
-      :src="lessonItem.url_youtube"
+      :src="`${lessonItem.url_youtube.replace('https://youtu.be/', 'https://www.youtube.com/embed/')}`"
     />
+
     <q-select
       borderless
       behavior="menu"
@@ -71,10 +72,14 @@ export default {
       this.$router.push({ name: "trainingitem", params: { id: val.id } })
 
     },
-    showLoader () {
-
-    },
     async getLessonItem () {
+      this.$q.loading.show(
+        {
+          spinner: QSpinnerPuff,
+          spinnerSize: 240,
+          delay: 400
+        }
+      )
 
       await this.$store.dispatch("training/lessonItem", this.$route.params.id)
     },
@@ -98,15 +103,13 @@ export default {
     }
   },
   created () {
-    this.$q.loading.show(
-      {
-        spinner: QSpinnerPuff,
-        spinnerSize: 240,
-        delay: 400
-      }
-    )
     this.lessonList ? null : this.getLessonList()
-    return this.getLessonItem().then(() => { this.$q.loading.hide() })
+
+    this.getLessonItem().then(() => {
+
+      this.$q.loading.hide()
+    })
+
   },
   watch: {
     '$route.params.id' () {
