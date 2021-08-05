@@ -1,28 +1,26 @@
 <template>
-  <q-page >
+  <q-page>
     <Background
       title="Оставить заявку"
       src="begin"
     />
-  
-  <ValidationObserver
-    v-slot="{ passes }"
-    
-  >
-  <form @submit.prevent="passes(onSubmit)"
-    class="tw-flex tw-flex-col tw-items-center tw-mb-28"
-  >
 
-  
-  <PhoneInput :raw.sync="cellphone"/>
-  <EmailInput  :valueemail.sync="email"/>
+    <ValidationObserver v-slot="{ passes }">
+      <form
+        @submit.prevent="passes(onSubmit)"
+        class="tw-flex tw-flex-col tw-items-center tw-mb-28"
+      >
 
-  <Button  text="Отправить" type="submit"
-    class="tw-mt-10"
-  />
-  </form>
-  </ValidationObserver>
+        <PhoneInput :raw.sync="cellphone" />
+        <EmailInput :valueemail.sync="email" />
 
+        <Button
+          text="Отправить"
+          type="submit"
+          class="tw-mt-10"
+        />
+      </form>
+    </ValidationObserver>
 
   </q-page>
 </template>
@@ -35,17 +33,16 @@ export default {
   components: {
     Background
   },
-  data(){
+  data () {
     return {
       email: '',
-      
+
       cellphone: '',
     }
   },
   methods: {
-    onSubmit(){
-      // console.log({cellphone:this.cellphone, mail:this.email})
-      this.$store.dispatch('auth/send', {cellphone:this.cellphone, mail:this.email})
+    onSubmit () {
+      this.$store.dispatch('auth/send', { cellphone: this.cellphone, mail: this.email })
     }
   }
 }

@@ -1,6 +1,9 @@
 <template>
   <q-page>
-    <Background title="Тарифы" src="rate" />
+    <Background
+      title="Тарифы"
+      src="rate"
+    />
     <div
       class="tw-flex tw-flex-col tw-items-center tw-mt-4 tw-mb-28"
       v-if="regionList !== null && importantList !== null"
@@ -21,8 +24,9 @@
         >
           <template v-slot:prepend>
             <Icon
-              name="city" 
-              style="margin-left: 14px"/>
+              name="city"
+              style="margin-left: 14px"
+            />
           </template>
           <template v-slot:append>
             <q-btn
@@ -58,7 +62,10 @@
           "
         >
           <template v-slot:prepend>
-            <Icon name="failed" style="margin-left: 14px" />
+            <Icon
+              name="failed"
+              style="margin-left: 14px"
+            />
           </template>
           <template v-slot:append>
             <q-btn
@@ -77,7 +84,6 @@
                 tw-text-deep-lemon
               "
               style="right: 14px"
-
             />
           </template>
         </q-select>
@@ -108,28 +114,27 @@ export default {
   components: {
     Background,
   },
-  data() {
+  data () {
     return {
       modelImportant: null,
       modelRegion: null,
     };
   },
   methods: {
-    linkTable() {
-      console.log('link');
+    linkTable () {
       this.$router.push();
     },
-    async getRegion() {
+    async getRegion () {
       this.showLoader();
       await this.$store.dispatch('rate/regionList');
       this.modelRegion = this.regionList[0];
     },
-    async getImportant() {
+    async getImportant () {
       this.showLoader();
       await this.$store.dispatch('rate/importantList');
       this.modelImportant = this.importantList[0];
     },
-    showLoader() {
+    showLoader () {
       this.$q.loading.show({
         spinner: QSpinnerPuff,
         spinnerSize: 240,
@@ -139,12 +144,12 @@ export default {
   computed: {
     ...mapGetters('rate', ['regionList', 'importantList']),
   },
-  created() {
+  created () {
     this.importantList === null ? this.getImportant() : null;
     this.regionList === null
       ? this.getRegion().then(() => {
-          this.$q.loading.hide();
-        })
+        this.$q.loading.hide();
+      })
       : null;
 
     if (this.regionList && this.regionList.length)
@@ -159,7 +164,7 @@ export default {
   position: relative;
   &::before {
     position: absolute;
-    content: '';
+    content: "";
     width: 20px;
     height: 20px;
     border: 10px solid red;
