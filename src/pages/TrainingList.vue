@@ -27,6 +27,7 @@
       class="tw-bg-white tw-min-h-full tw-relative tw-rounded-md tw-px-2 tw-mt-6 tw-mb-11"
       style="box-shadow: 0px 0px 48px 16px #F4AD4829; min-height: 70vh"
     >
+      <TimeError v-if="timeError" />
       <div
         v-for="(item) in lessonList"
         :key="item.id"
@@ -59,17 +60,26 @@
         </div>
       </div>
     </div>
-
   </q-page>
 </template>
 
 <script>
 
-import { mapGetters } from 'vuex'
-import { QSpinnerPuff } from 'quasar'
+import { mapGetters } from 'vuex';
+import { QSpinnerPuff } from 'quasar';
+import TimeError from 'components/TimeError.vue';
 
 export default {
   // name: 'PageName',
+  components: {
+    TimeError
+  },
+  data () {
+    return {
+      timeError: false
+
+    }
+  },
   methods: {
     linkTraining () {
       this.$router.push({ name: 'training' })
@@ -95,7 +105,11 @@ export default {
     ...mapGetters("training", ['lessonList']),
   },
   created () {
-    this.getLessonList().then(() => { this.$q.loading.hide() });
+    this.getLessonList().then(() => { this.$q.loading.hide() })
+      .catch((e) => {
+        e == "TimeoutError: Request timed out" ? this.timeError = true : null
+        this.$q.loading.hide();
+      });
   },
   beforeRouteLeave (to, from, next) {
     this.$q.loading.hide()

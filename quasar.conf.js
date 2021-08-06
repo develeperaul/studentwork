@@ -152,6 +152,8 @@ module.exports = function (/* ctx */) {
 
     // Full list of options: https://v1.quasar.dev/quasar-cli/developing-cordova-apps/configuring-cordova
     cordova: {
+      HideKeyboardFormAccessoryBar: true,
+      orientation: "portrait"
       // noIosLegacyBuildFlag: true, // uncomment only if you know what you are doing
     },
 

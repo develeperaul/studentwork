@@ -1,6 +1,38 @@
 <template>
-  <q-page>
+  <q-page v-if="timeError">
+    <div class="-m-content tw-relative tw-z-0">
+      <div
+        class=" tw-absolute bg-img"
+        style="background-image: url(bg/bg-traininglist.svg);"
+      >
+      </div>
+    </div>
+    <div class="tw-text-center tw-relative tw-pt-6 ">
+      <div
+        @click="linkTraining"
+        class="tw-absolute tw-left-0 tw-top-1 tw-transform tw-translate-y-1/2 "
+      >
+        <q-icon
+          name="chevron_left"
+          size="31px"
+          color="white"
+        />
+        <span class="tw-align-middle tw-text-white tw--ml-2"> Назад </span>
+      </div>
+      <span class="tw-font-bold tw-text-white tw-text-2xl ">
+        Урок
+      </span>
+    </div>
+    <div
+      class="tw-bg-white tw-min-h-full tw-relative tw-rounded-md tw-px-2 tw-mt-6 tw-mb-11"
+      style="box-shadow: 0px 0px 48px 16px #F4AD4829; min-height: 70vh"
+    >
+      <TimeError />
+    </div>
+  </q-page>
+  <q-page v-else>
     <q-video
+      v-if="lessonItem "
       class="-m-content"
       :src="`${lessonItem.url_youtube.replace('https://youtu.be/', 'https://www.youtube.com/embed/')}`"
     />
@@ -57,17 +89,26 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import { QSpinnerPuff } from 'quasar'
+import { mapGetters } from 'vuex';
+import { QSpinnerPuff } from 'quasar';
+import TimeError from 'components/TimeError.vue';
+
 
 export default {
   name: 'TrainingItem',
+  components: {
+    TimeError
+  },
   data () {
     return {
-      model: null
+      model: null,
+      timeError: false
     }
   },
   methods: {
+    linkTraining () {
+      this.$router.go(-1)
+    },
     click (val) {
       this.$router.push({ name: "trainingitem", params: { id: val.id } })
 
@@ -109,15 +150,40 @@ export default {
 
       this.$q.loading.hide()
     })
+      .catch((e) => {
+        e == "TimeoutError: Request timed out" ? this.timeError = true : null
+        this.$q.loading.hide();
+      });
 
   },
   watch: {
     '$route.params.id' () {
       this.lessonList ? null : this.getLessonList()
-      return this.getLessonItem()
+      return this.getLessonItem().then(() => {
+
+        this.$q.loading.hide()
+      })
+        .catch((e) => {
+          e == "TimeoutError: Request timed out" ? this.timeError = true : null
+          this.$q.loading.hide();
+        });
     }
   }
 
 
 }
 </script>
+<style lang="scss" scoped>
+.bg-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-position: top; */
+
+  background-position-y: -40px;
+  background-position-x: center;
+  width: 100%;
+  min-height: 100px;
+  height: 242px;
+  /* padding: 0 0 10px 0; */
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="tw-relative">
     <div class="-m-content tw-relative tw-z-0">
       <div
         class=" tw-absolute bg-img"
@@ -22,18 +22,18 @@
         Тарифы
       </span>
     </div>
+    <template v-if="tableList">
+      <Table
+        v-if="tableList.length!==0"
+        class="tw-relative tw-z-10 tw-mt-6"
+        :list="tableList"
+      />
+      <div v-if="tableList.length == 0">
+        <span class="tw-absolute tw-transform tw-translate-x-1/2 tw-right-1/2 tw-top-1/2 tw-font-bold tw-text-2xl ">Данных нет</span>
+      </div>
 
-    <Table
-      v-if="tableList"
-      class="tw-relative tw-z-10 tw-mt-6"
-      :list="tableList"
-    />
-    <div
-      v-else
-      class="tw-z-10  tw-relative tw-w-full tw-h-full"
-    >
-      <span class="tw-absolute tw-transform tw-translate-x-1/2 tw-right-1/2 tw-font-bold tw-text-2xl ">Данных нет</span>
-    </div>
+    </template>
+
   </q-page>
 </template>
 
@@ -68,7 +68,7 @@ export default {
     ...mapGetters('rate', ['tableList'])
   },
   created () {
-    this.getTable(this.$route.params).then(() => { this.$q.loading.hide() });
+    this.getTable(this.$route.params).then(() => { this.$q.loading.hide() }).catch(() => { this.$q.loading.hide() });
   }
 }
 </script>
