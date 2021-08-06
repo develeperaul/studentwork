@@ -29,6 +29,7 @@
     >
       <TimeError v-if="timeError" />
       <div
+        v-else
         v-for="(item) in lessonList"
         :key="item.id"
         class="tw-flex tw-justify-between tw-py-3 b-bottom"
@@ -105,11 +106,13 @@ export default {
     ...mapGetters("training", ['lessonList']),
   },
   created () {
-    this.getLessonList().then(() => { this.$q.loading.hide() })
-      .catch((e) => {
-        e == "TimeoutError: Request timed out" ? this.timeError = true : null
-        this.$q.loading.hide();
-      });
+    if (!this.lessonList) {
+      this.getLessonList().then(() => { this.$q.loading.hide() })
+        .catch((e) => {
+          e == "TimeoutError: Request timed out" ? this.timeError = true : null
+          this.$q.loading.hide();
+        });
+    }
   },
   beforeRouteLeave (to, from, next) {
     this.$q.loading.hide()
