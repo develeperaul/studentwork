@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
+    "@quasar/icongenie": "^2.4.0",
     "core-js": "^3.6.5",
+    "global": "^4.4.0",
     "ky": "^0.28.5",
     "quasar": "^1.0.0",
     "v-mask": "^2.2.4",
