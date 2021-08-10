@@ -1,9 +1,4 @@
 module.exports = {
-    purge: [
-        './src/**/*.html',
-        './src/**/*.vue',
-        './src/**/*.jsx',
-    ],
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
@@ -34,13 +29,13 @@ module.exports = {
                 lg:['0.9375rem', '1.09875rem'],
                 xl: ['1rem', '1.1875rem'],
                 '2xl': ['1.125rem','1.31845em']
-                
+
             }
         }
     },
-    
+
     prefix:  'tw-',
-    
+
     variants: {},
     plugins: []
 }

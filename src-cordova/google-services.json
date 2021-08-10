@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1036501144663",
+    "project_id": "mmp-app-fc3b6",
+    "storage_bucket": "mmp-app-fc3b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036501144663:android:97dc1476d3debb518cff12",
+        "android_client_info": {
+          "package_name": "ru.sim.apps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1036501144663-3cor2f5q5udduqt3voj7npigt36noe71.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyUMwMDRPCXLRPL2Ru5wi4E4c7K_6Bv_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1036501144663-3cor2f5q5udduqt3voj7npigt36noe71.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
