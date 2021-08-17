@@ -1,12 +1,8 @@
 <template>
   <q-layout view="hhh lpr FFF">
     <q-footer
-      class="tw-bg-white tw-overflow-hidden tw-pt-1.5 tw-pb-3.5 tw-z-10 env-b"
-      style="
-        box-shadow: 0px 0px 18px 0px #e5e5e5;
-        padding-top: 6px;
-        padding-bottom: 14px;
-      "
+      class="tw-bg-white tw-overflow-hidden tw-z-10 env-b"
+      style="box-shadow: 0px 0px 18px 0px #e5e5e5; padding-top: 6px"
     >
       <div class="-m-content">
         <q-toolbar class="tw-grid tw-grid-flow-col">
@@ -17,8 +13,8 @@
         </q-toolbar>
       </div>
     </q-footer>
-    <q-page-container class="env-t">
-      <router-view class="p-content " />
+    <q-page-container>
+      <router-view class="p-content" />
     </q-page-container>
   </q-layout>
 </template>
