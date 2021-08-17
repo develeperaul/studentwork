@@ -1,4 +1,16 @@
 // app global css in SCSS form
+a[type="button"] {
+  appearance: none;
+}
+
+.env-t {
+  padding-top: env(safe-area-inset-top, 20px);
+}
+
+.env-b {
+  padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
 .q-select__dropdown-icon {
   display: none;
 }
