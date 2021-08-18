@@ -1,8 +1,8 @@
 {
   "name": "studentwork",
   "version": "1.0.1",
-  "description": "'Работа Студентам'- это приложение которое помогает студентам зарабатывать",
-  "productName": "Работа Студентам",
+  "description": "'Продавец сим карт'- это приложение которое помогает студентам зарабатывать",
+  "productName": "Продавец сим карт",
   "author": "Ralfik <developeraul@gmail.com>",
   "private": true,
   "scripts": {

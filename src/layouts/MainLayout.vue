@@ -14,7 +14,10 @@
       </div>
     </q-footer>
     <q-page-container>
-      <router-view class="p-content" />
+      <router-view
+        class="p-content"
+        :class="{ 'env-t': $route.meta['safe-t'] !== false }"
+      />
     </q-page-container>
   </q-layout>
 </template>
