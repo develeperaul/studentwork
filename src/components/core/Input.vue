@@ -18,7 +18,7 @@
       
     </label>
     <input
-      
+      @focus="onFocus" @blur="onBlur"
       :class="{ 'tw-text-red': errors[0], 'tw-pr-11' : errors[0],   }"
       class="tw-w-full tw-pl-14 tw-pr-3 tw-bg-transparent   tw-font-bold tw-text-xl"
       :style="errors[0] ? {'color' : '#ED8D88 '} : {'color': textColor}"
@@ -115,6 +115,14 @@ export default {
     valuePlaceholder: null
   }),
   methods: {
+    onFocus(){
+      console.log('focus')
+      this.$store.commit('auth/toggleFooter', false)
+    },
+    onBlur(){
+      console.log('blur')
+      this.$store.commit('auth/toggleFooter', true)
+    }
     // onBlur(){
     //   if(!this.hasValue){
 

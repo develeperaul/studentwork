@@ -9,3 +9,7 @@ export function stateSuccess(state, status){
     }
      
 }
+
+export function toggleFooter(state, value){
+    state.footerState = value
+}

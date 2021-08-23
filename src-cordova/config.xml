@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ru.sim.students" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="ru.sim.apps" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Продавец сим карт</name>
     <description>'Продавец сим карт'- это приложение которое помогает студентам зарабатывать</description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
@@ -14,6 +14,8 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
+        <preference name="orientation" value="portrait" />
+        <resource-file src="google-services.json" target="app/google-services.json" />
         <allow-intent href="market:*" />
         <icon density="ldpi" src="res/android/ldpi.png" />
         <icon density="mdpi" src="res/android/mdpi.png" />
@@ -35,15 +37,7 @@
         <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png" />
     </platform>
     <platform name="ios">
-        <allow-navigation href="*" />
-        <preference name="DisallowOverscroll" value="true" />
-        <resource-file src="GoogleService-Info.plist" />
-        <preference name="WKWebViewOnly" value="true" />
-        <feature name="CDVWKWebViewEngine">
-            <param name="ios-package" value="CDVWKWebViewEngine" />
-        </feature>
-        <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
-        <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+        <preference name="orientation" value="portrait" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <icon height="57" src="res/ios/icon.png" width="57" />
@@ -80,6 +74,6 @@
         <splash src="res/screen/ios/Default@2x~ipad~anyany.png" />
         <splash src="res/screen/ios/Default@2x~ipad~comany.png" />
     </platform>
-    <preference name="SplashMaintainAspectRatio" value="true" />
     <allow-navigation href="about:*" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
 </widget>

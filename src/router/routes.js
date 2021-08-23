@@ -4,7 +4,7 @@ const routes = [
     component: () => import("layouts/MainLayout.vue"),
     children: [
       {
-        path: "",
+        path: "/about",
         name: "about",
         component: () => import("pages/About.vue"),
         meta: { "safe-t": false }
@@ -28,13 +28,13 @@ const routes = [
       },
 
       {
-        path: "/rate",
+        path: "/",
         name: "rate",
         component: () => import("pages/Rate.vue"),
         meta: { "safe-t": false }
       },
       {
-        path: "/rate/table/:region_id&:important_id",
+        path: "/table/:region_id&:important_id",
         name: "table",
         component: () => import("pages/RateTable.vue")
       },

@@ -3,10 +3,7 @@
     <!-- Be sure to play with the Layout demo on docs -->
 
     <q-page-container class="p-content tw-relative tw-h-screen">
-      <div
-        class="env-t tw-absolute tw-z-10 tw-right-4"
-        @click="closeScreen"
-      >
+      <div class="env-t tw-absolute tw-z-10 tw-right-4" @click="closeScreen">
         <span class="tw-text-grey-light tw-font-bold tw-text-2xl">
           Пропустить
         </span>
@@ -68,7 +65,7 @@
         <q-carousel-slide :name="3">
           <div>
             <q-img
-              src="carousel/people_1.svg"
+              src="carousel/people_3.svg"
               spinner-color="primary"
               spinner-size="82px"
               contain
@@ -147,7 +144,7 @@
             <span
               @click="$refs.carousel.previous()"
               :class="[
-                slide === 1 ? 'tw-text-gray-light' : 'tw-text-slide-color',
+                slide === 1 ? 'tw-text-gray-light' : 'tw-text-slide-color'
               ]"
               >Пред</span
             >
@@ -166,7 +163,7 @@ export default {
   data() {
     return {
       slide: 1,
-      autoplay: false,
+      autoplay: false
     };
   },
   methods: {
@@ -178,13 +175,12 @@ export default {
       }
     },
     closeScreen() {
-      localStorage.setItem('start', 1);
-      this.$router.push({ name: 'about' });
-    },
-  },
+      localStorage.setItem("start", 1);
+      this.$router.push({ name: "rate" });
+    }
+  }
 };
 </script>
-
 
 <style>
 .main-carousel .q-carousel__navigation--bottom {

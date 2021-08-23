@@ -1,14 +1,17 @@
 <template>
   <q-layout view="hhh lpr FFF">
     <q-footer
+
       class="tw-bg-white tw-overflow-hidden tw-z-10 env-b"
-      style="box-shadow: 0px 0px 18px 0px #e5e5e5; padding-top: 6px"
+      style="footer-show box-shadow: 0px 0px 18px 0px #e5e5e5; padding-top: 6px"
+      v-model="footerState"
+
     >
       <div class="-m-content">
         <q-toolbar class="tw-grid tw-grid-flow-col">
-          <NavLink name="about" src="about" title="О нас" :exact="true" />
+          <NavLink name="about" src="about" title="О нас"  />
           <NavLink name="training" src="training" title="Обучение" />
-          <NavLink name="rate" src="rate" title="Тарифы" />
+          <NavLink name="rate" src="rate" title="Тарифы" :exact="true" />
           <NavLink name="begin" src="begin" title="Начать" />
         </q-toolbar>
       </div>
@@ -32,9 +35,17 @@ export default {
   name: 'MainLayout',
 
   data() {
-    return {};
+    return {
+      
+    };
   },
   methods: {},
+  computed: {
+    footerState(){
+      return this.$store.state.auth.footerState
+      
+    }
+  }
 };
 </script>
 

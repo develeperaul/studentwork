@@ -48,10 +48,13 @@
             spinner-size="40px"
             img-class="tw-rounded-md "
             style="min-width: 93px"
+            @click="linkVideo(item.id)"
           />
           <div class="tw-flex tw-flex-col tw-ml-2">
-            <span class="tw-font-bold">{{ item.label }}</span>
-            <span class="tw-text-sm tw-mt-1">{{ item.dlit }}</span>
+            <span class="tw-font-bold"
+            @click="linkVideo(item.id)">{{ item.label }}</span>
+            <span class="tw-text-sm tw-mt-1"
+            @click="linkVideo(item.id)">{{ item.dlit }}</span>
           </div>
         </div>
 

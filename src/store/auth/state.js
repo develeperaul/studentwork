@@ -1,5 +1,6 @@
 export default function () {
   return {
-    status: null
+    status: null,
+    footerState: true
   }
 }
