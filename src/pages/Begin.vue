@@ -42,7 +42,8 @@ export default {
   },
   methods: {
     onSubmit () {
-      this.$store.dispatch('auth/send', { cellphone: this.cellphone, mail: this.email })
+      this.$store.dispatch('auth/send', { cellphone: this.cellphone, mail: this.email }).then(resolve=>resolve.status === 'ok'? this.$router.push({name:'order'}) : this.$router.push({name:'error'}));
+    
     }
   }
 }

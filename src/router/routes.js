@@ -47,6 +47,11 @@ const routes = [
     ]
   },
   {
+    path: "/order",
+    name: "order",
+    component: () => import("layouts/OrderLayout.vue")
+  },
+  {
     path: "/carousel",
     name: "screen-start",
     component: () => import("layouts/CarouselLayout.vue")
@@ -56,6 +61,7 @@ const routes = [
   // but you can also remove it
   {
     path: "*",
+    name: "error",
     component: () => import("pages/Error404.vue")
   }
 ];
