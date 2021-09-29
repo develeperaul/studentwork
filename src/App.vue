@@ -13,6 +13,10 @@ export default {
       localStorage.setItem('start', 0)
       this.$router.push({ name: 'screen-start' });
     } 
+    
+    
+    
+    
   },
   name: 'App',
 };

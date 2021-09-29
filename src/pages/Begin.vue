@@ -41,10 +41,22 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
-      this.$store.dispatch('auth/send', { cellphone: this.cellphone, mail: this.email }).then(resolve=>resolve.status === 'ok'? this.$router.push({name:'order'}) : this.$router.push({name:'error'}));
-    
+    async onSubmit () {
+      await this.$store.dispatch('auth/send', { cellphone: this.cellphone, mail: this.email })
+        .then(resolve=>{
+          if(resolve.status === 'ok'){
+            if(this.$q.platform.is.android && localStorage.getItem('form_send') === null){
+              cordova.plugins.firebase.analytics.logEvent('FormSent', null);
+              facebookConnectPlugin.logEvent('FormSent')          
+              localStorage.setItem("form_send", true);
+            }
+            return this.$router.push({name:'order'})
+          } 
+          return this.$router.push({name:'error'})
+          })
+        
+      // console.log(FirebasePlugin);
     }
-  }
+  },
 }
 </script>
